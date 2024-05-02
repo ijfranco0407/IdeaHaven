@@ -47,4 +47,9 @@ function events() {
   });
 }
 
+
+function toggleAnswer(question) {
+  question.classList.toggle('open');
+}
+
 events();

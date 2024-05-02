@@ -8,22 +8,7 @@
     <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .features-wrapper {
-            display: flex;
-            flex-direction: column; /* Display items in a single column */
-        }
-
-        .feature {
-            background-color: #64bcf4;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .feature h2 {
-            margin-top: 0;
-        }
+        
     </style>
 </head>
 <body>
@@ -63,39 +48,39 @@
                             Here are some of the key features of IdeaHaven that empower creativity and connection among users:
                         </p>
                         <div class="features-wrapper">
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>User Registration and Authentication</h2>
                                 <p>Allow users to sign up for an account with a username, email, and password.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Profile Creation and Customization</h2>
                                 <p>Enable users to create a profile with a bio, profile picture, and other optional details.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Posting and Sharing Content</h2>
                                 <p>Allow users to create and publish short posts or "ideas" containing text or links.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Following and Followers</h2>
                                 <p>Enable users to follow other users to see their posts in their feed.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Engagement Features</h2>
                                 <p>Allow users to like, comment on, and share posts from other users.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Search and Explore</h2>
                                 <p>Implement a search feature to allow users to find specific posts, users, or topics of interest.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Messaging and Notifications</h2>
                                 <p>Enable users to send private messages to each other and implement notifications for new messages, mentions, and activity on posts.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Content Moderation and Reporting</h2>
                                 <p>Allow users to report inappropriate or abusive content and take appropriate actions.</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" onclick="toggleParagraph(this)">
                                 <h2>Analytics and Insights</h2> 
                                 <p>Provide users with insights into their post performance, such as views, likes, and comments.</p>
                             </div>
@@ -118,5 +103,10 @@
 
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <script src="main.js"></script>
+    <script>
+        function toggleParagraph(feature) {
+            feature.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
