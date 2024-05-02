@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaHaven - FAQs</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-wrapper {
+            display: flex;
+            flex-direction: column; /* Display items in a single column */
+        }
+
+        .question {
+            background-color: #64bcf4;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .question h2 {
+            margin-top: 0;
+        }
+
+        .answer {
+            display: none; /* Hide answer by default */
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+
+        .open .answer {
+            display: block; /* Display answer when question is clicked */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="big-wrapper light">
+            <img src="./img/shape.png" alt="" class="shape" />
+
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="logo.jpg" alt="Logo" />
+                        <h3>IdeaHaven</h3>
+                    </div>
+
+                    <div class="links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="register.html" class="btn">Sign up</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="overlay"></div>
+
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="showcase-area">
+                <div class="container">
+                    <div class="left">
+                        <div class="big-title">
+                            <h1>Frequently Asked Questions</h1>
+                        </div>
+                        <div class="faq-wrapper">
+                            <div class="question" onclick="toggleAnswer(this)">
+                                <h2>What is IdeaHaven?</h2>
+                                <div class="answer">
+                                    IdeaHaven is a platform for users to share and discover ideas, connect with others, and collaborate on creative projects.
+                                </div>
+                            </div>
+                            <div class="question" onclick="toggleAnswer(this)">
+                                <h2>How do I sign up?</h2>
+                                <div class="answer">
+                                    You can sign up for an IdeaHaven account by clicking on the "Sign up" button on the homepage and filling out the registration form.
+                                </div>
+                            </div>
+                            <div class="question" onclick="toggleAnswer(this)">
+                                <h2>Can I customize my profile?</h2>
+                                <div class="answer">
+                                    Yes, you can customize your profile by adding a bio, profile picture, and other optional details through the profile settings.
+                                </div>
+                            </div>
+                            <div class="question" onclick="toggleAnswer(this)">
+                                <h2>How can I report inappropriate content?</h2>
+                                <div class="answer">
+                                    If you come across any inappropriate or abusive content, you can report it by clicking on the "Report" button next to the post or contacting our support team.
+                                </div>
+                            </div>
+                            <div class="question" onclick="toggleAnswer(this)">
+                                <h2>Is IdeaHaven free to use?</h2>
+                                <div class="answer">
+                                    Yes, IdeaHaven is free to use for all users. However, we may offer premium features or subscriptions in the future for additional benefits.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="bottom-area">
+                <div class="container">
+                    <button class="toggle-btn">
+                        <i class="far fa-moon"></i>
+                        <i class="far fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function toggleAnswer(question) {
+            question.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
