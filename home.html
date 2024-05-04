@@ -2,136 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #3b5998;
-            padding: 10px 20px;
-            color: white;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        main {
-            display: flex;
-            padding: 20px;
-        }
-
-        .feed {
-            flex: 2;
-            background-color: #f0f2f5;
-            padding: 20px;
-            border-right: 1px solid #ccc;
-        }
-
-        .post {
-            background-color: white;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-
-        aside {
-            flex: 1;
-            padding-left: 20px;
-        }
-
-        .sidebar {
-            background-color: #f0f2f5;
-            padding: 20px;
-        }
-
-        .sidebar h2 {
-            margin-top: 0;
-        }
-
-        footer {
-            background-color: #f0f2f5;
-            padding: 10px 20px;
-            text-align: center;
-            border-top: 1px solid #ccc;
-        }
-
-        footer nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        footer nav ul li {
-            margin: 0 10px;
-        }
-
-        footer nav ul li a {
-            color: #777;
-            text-decoration: none;
-        }
-    </style>
+    <title>IdeaHaven - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Friends</a></li>
-                <li><a href="#">Messages</a></li>
-            </ul>
-        </nav>
-    </header>
-    
     <main>
-        <div class="feed">
-            <div class="post">
-                <p>This is a post from a friend.</p>
+        <div class="big-wrapper light">
+            <img src="./img/shape.png" alt="" class="shape" />
+
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="logo.jpg" alt="Logo" />
+                        <h3>IdeaHaven</h3>
+                    </div>
+
+                    <div class="navigation">
+                        <ul>
+                            <li><a href="#" class="home-icon"><i class="fas fa-home"></i></a></li>
+                            <li><input type="text" placeholder="Search..."></li>
+                            <li><a href="#" class="notifications-icon"><i class="fas fa-bell"></i></a></li>
+                            <li><a href="#" class="profile-icon"><i class="fas fa-user"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="overlay"></div>
+
+                    <div class="hamburger-menu">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="container">
+                    <h1>News Feed</h1>
+                    <div class="post">
+                        <div class="user-info">
+                            <img src="user_profile.jpg" alt="User Profile Picture">
+                            <div class="user-details">
+                                <h2>John Doe</h2>
+                                <p>@johndoe</p>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec feugiat ex. Nullam eget lacus id libero tincidunt consectetur.</p>
+                    </div>
+                    <!-- Add more posts here -->
+                </div>
             </div>
-            <div class="post">
-                <p>This is another post from a friend.</p>
+
+            <div class="bottom-area">
+                <div class="container">
+                    <button class="toggle-btn">
+                        <i class="far fa-moon"></i>
+                        <i class="far fa-sun"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        
-        <aside>
-            <div class="sidebar">
-                <h2>Friend Suggestions</h2>
-                <ul>
-                    <li>Friend 1</li>
-                    <li>Friend 2</li>
-                    <li>Friend 3</li>
-                </ul>
-            </div>
-        </aside>
     </main>
-    
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
-        </nav>
-    </footer>
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

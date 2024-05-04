@@ -468,3 +468,48 @@ header .container {
   background-color: #f0f0f0;
 }
 
+.navigation ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navigation li {
+  margin-right: 20px;
+}
+
+.navigation input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation ul {
+    justify-content: flex-end;
+  }
+
+  .navigation li:not(:first-child) {
+    display: none;
+  }
+
+  .navigation li:first-child {
+    margin-right: 0;
+  }
+
+  .navigation li:first-child a {
+    margin-right: 20px; /* Add margin between logo and first icon */
+  }
+
+  .home-icon,
+  .notifications-icon,
+  .profile-icon {
+    display: inline-block;
+    font-size: 20px;
+    color: #333; /* Change color as needed */
+  }
+
+  .navigation ul.active li:not(:first-child) {
+    display: block;
+  }
+}

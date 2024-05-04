@@ -52,4 +52,16 @@ function toggleAnswer(question) {
   question.classList.toggle('open');
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const navigation = document.querySelector(".navigation ul");
+  const overlay = document.querySelector(".overlay");
+
+  hamburgerMenu.addEventListener("click", function() {
+    navigation.classList.toggle("active");
+    overlay.classList.toggle("active"); // Toggle overlay visibility
+  });
+});
+
+
 events();
