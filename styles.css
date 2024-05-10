@@ -513,3 +513,27 @@ header .container {
     display: block;
   }
 }
+.links input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-left: 50px;
+}
+
+.links input[type="text"]::placeholder {
+  color: #aaa;
+
+}
+@media screen and (max-width: 767px) {
+  .links a i {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .links a i {
+    display: none;
+  }
+}
+
+
