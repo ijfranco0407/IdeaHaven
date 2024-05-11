@@ -535,5 +535,102 @@ header .container {
     display: none;
   }
 }
+.hero{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: #333;
+}
+.card h2{
+  font-weight: 500;
+  color: #000;
+}
+.card img{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+label{
+  display: block ;
+  width: 200px;
+  background: #e3362c;
+  color: #fff;
+  padding: 12px;
+  margin: 10px auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input{
+  display: none;
+}
+
+.bio {
+  margin-top: 20px;
+}
+
+.bio textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  min-height: 100px;
+}
 
 
+.bio textarea {
+  display: none;
+}
+
+.bio.show-textarea textarea {
+  display: block;
+}
+
+.bio-text {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+/* CSS for Facebook-like posts */
+
+.post-item {
+  background-color: #9cb6c7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.buttons-container button:hover {
+  background-color: #f0f2f5;
+}

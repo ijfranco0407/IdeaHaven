@@ -1,48 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile - IdeaHaven</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IdeaHaven - Profile</title>
+  <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <div class="big-wrapper light">
-            <img src="./img/shape.png" alt="" class="shape" />
+  <main>
+    <div class="big-wrapper light">
+      <img src="./img/shape.png" alt="" class="shape" />
 
-            <header>
-                <div class="container">
-                    <div class="logo">
-                        <img src="logo.jpg" alt="Logo" />
-                        <h3>IdeaHaven</h3>
-                    </div>
+      <header>
+        <div class="container">
+          <div class="logo">
+            <img src="logo.jpg" alt="Logo" />
+            <h3>IdeaHaven</h3>
+          </div>
 
-                    <div class="navigation">
-                        <ul>
-                            <li><a href="home.html" class="home-icon"><i class="fas fa-home"></i> Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
+          <div class="links">
+            <ul>
+              <li><a href="Home.html"><i class="fas fa-home"></i><span class="icon-text">Home</span></a></li>
+              <li><a href="Notification.html"><i class="fas fa-bell"></i><span class="icon-text">Notifications</span></a></li>
+              <li><a href="logout.html" class="btn"><i class="fas fa-user"></i><span class="icon-text">Sign-Out</span></a></li>
+            </ul>
+          </div>
 
-            <div class="content">
-                <div class="container profile">
-                </div>
-            </div>
+          <div class="overlay"></div>
 
-            <div class="bottom-area">
-                <div class="container">
-                    <button class="toggle-btn">
-                        <i class="far fa-moon"></i>
-                        <i class="far fa-sun"></i>
-                    </button>
-                </div>
-            </div>
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
         </div>
-    </main>
+      </header>
 
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-    <script src="main.js"></script>
+      <div class="showcase-area">
+        <div class="container">
+          <div class="left">
+            <div class="hero">
+                <div class="card">
+                    <h2>Ping Ping</h2>
+                    <p>@ping2</p>
+                    <img src="images/feature.jpg" id="profile-pic">
+                    <label for="input-file">Update Image</label>
+                    <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                    <div class="bio" id="bio-container">
+                        <textarea placeholder="Write your bio here..." id="bio-input"></textarea>
+                        <button id="update-bio">Update Bio</button>
+                    </div>
+                    <div class="bio-text" id="displayed-bio"></div>
+                </div>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="hero">
+                <div class="card">
+                    <div class="post" id="post-container">
+                        <textarea placeholder="Share your thoughts...." id="post-input"></textarea><br>
+                        <button id="post-button">Post</button>
+                    </div>
+                    <div class="post-text" id="displayed-post"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-area">
+        <div class="container">
+          <button class="toggle-btn">
+            <i class="far fa-moon"></i>
+            <i class="far fa-sun"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const bioContainer = document.getElementById('bio-container');
+  const bioTextarea = document.getElementById('bio-input');
+  const updateBioButton = document.getElementById('update-bio');
+  const displayedBio = document.getElementById('displayed-bio');
+
+  updateBioButton.addEventListener('click', function() {
+    const newBio = bioTextarea.value;
+    displayedBio.textContent = newBio;
+    bioContainer.classList.toggle('show-textarea');
+    if (bioContainer.classList.contains('show-textarea')) {
+      bioTextarea.focus(); // Auto-focus on textarea when shown
+    }
+  });
+
+  const postButton = document.getElementById('post-button');
+  const postContainer = document.getElementById('post-container');
+  const displayedPost = document.getElementById('displayed-post');
+
+  postButton.addEventListener('click', function() {
+    const postInput = document.getElementById('post-input').value;
+    const postElement = document.createElement('div');
+    postElement.classList.add('post-item');
+
+    // Add post content
+    const postContent = document.createElement('div');
+    postContent.textContent = postInput;
+    postElement.appendChild(postContent);
+
+    // Add user name
+    const userName = document.createElement('div');
+    userName.textContent = "Ping Ping"; // Change this to the actual user name
+    userName.classList.add('user-name');
+    postElement.appendChild(userName);
+
+    // Add buttons for reactions, comments, shares, and menu
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons-container');
+
+    const reactionButton = document.createElement('button');
+    reactionButton.textContent = "React";
+    buttonsContainer.appendChild(reactionButton);
+
+    const commentButton = document.createElement('button');
+    commentButton.textContent = "Comment";
+    buttonsContainer.appendChild(commentButton);
+
+    const shareButton = document.createElement('button');
+    shareButton.textContent = "Share";
+    buttonsContainer.appendChild(shareButton);
+
+    const menuButton = document.createElement('button');
+    menuButton.textContent = "•••";
+    buttonsContainer.appendChild(menuButton);
+
+    postElement.appendChild(buttonsContainer);
+
+    displayedPost.appendChild(postElement);
+  });
+});
+  </script>
 </body>
 </html>

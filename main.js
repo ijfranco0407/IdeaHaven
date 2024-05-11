@@ -63,5 +63,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
 events();
+
+
+//update profile
+let profilePic = document.getElementById("profile-pic");
+let inputFile = document.getElementById("input-file");
+
+inputFile.onchange = function(){
+  profilePic.src = URL.createObjectURL(inputFile.files[0]);
+}
+
+//Update Bio 
+document.addEventListener("DOMContentLoaded", function() {
+  const bioInput = document.getElementById("bio-input");
+  const updateBioBtn = document.getElementById("update-bio");
+
+  // Load the bio from local storage if it exists
+  const savedBio = localStorage.getItem("userBio");
+  if (savedBio) {
+      bioInput.value = savedBio;
+  }
+
+  updateBioBtn.addEventListener("click", function() {
+      // Save the updated bio to local storage
+      localStorage.setItem("userBio", bioInput.value);
+      alert("Bio updated successfully!");
+  });
+});
+
