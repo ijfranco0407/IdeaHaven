@@ -57,13 +57,15 @@
 
           <div class="right">
             <div class="hero">
-                <div class="card">
-                    <div class="post" id="post-container">
-                        <textarea placeholder="Share your thoughts...." id="post-input"></textarea><br>
-                        <button id="post-button">Post</button>
-                    </div>
-                    <div class="post-text" id="displayed-post"></div>
+              <div class="card">
+                <div class="posts-container">
+                  <div class="post" id="post-container">
+                    <textarea placeholder="Share your thoughts...." id="post-input"></textarea><br>
+                    <button id="post-button">Post</button>
+                  </div>
+                  <div class="post-text" id="displayed-post"></div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -84,65 +86,66 @@
   <script src="main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-  const bioContainer = document.getElementById('bio-container');
-  const bioTextarea = document.getElementById('bio-input');
-  const updateBioButton = document.getElementById('update-bio');
-  const displayedBio = document.getElementById('displayed-bio');
+      const bioContainer = document.getElementById('bio-container');
+      const bioTextarea = document.getElementById('bio-input');
+      const updateBioButton = document.getElementById('update-bio');
+      const displayedBio = document.getElementById('displayed-bio');
 
-  updateBioButton.addEventListener('click', function() {
-    const newBio = bioTextarea.value;
-    displayedBio.textContent = newBio;
-    bioContainer.classList.toggle('show-textarea');
-    if (bioContainer.classList.contains('show-textarea')) {
-      bioTextarea.focus(); // Auto-focus on textarea when shown
-    }
-  });
+      updateBioButton.addEventListener('click', function() {
+        const newBio = bioTextarea.value;
+        displayedBio.textContent = newBio;
+        bioContainer.classList.toggle('show-textarea');
+        if (bioContainer.classList.contains('show-textarea')) {
+          bioTextarea.focus(); // Auto-focus on textarea when shown
+        }
+      });
 
-  const postButton = document.getElementById('post-button');
-  const postContainer = document.getElementById('post-container');
-  const displayedPost = document.getElementById('displayed-post');
+      const postButton = document.getElementById('post-button');
+      const postContainer = document.getElementById('post-container');
+      const displayedPost = document.getElementById('displayed-post');
 
-  postButton.addEventListener('click', function() {
-    const postInput = document.getElementById('post-input').value;
-    const postElement = document.createElement('div');
-    postElement.classList.add('post-item');
+      postButton.addEventListener('click', function() {
+        const postInput = document.getElementById('post-input').value;
+        const postElement = document.createElement('div');
+        postElement.classList.add('post-item');
 
-    // Add post content
-    const postContent = document.createElement('div');
-    postContent.textContent = postInput;
-    postElement.appendChild(postContent);
+        // Add user name
+        const userName = document.createElement('div');
+        userName.textContent = "Ping Ping"; // Change this to the actual user name
+        userName.classList.add('user-name');
+        postElement.appendChild(userName);
 
-    // Add user name
-    const userName = document.createElement('div');
-    userName.textContent = "Ping Ping"; // Change this to the actual user name
-    userName.classList.add('user-name');
-    postElement.appendChild(userName);
+        // Add post content
+        const postContent = document.createElement('div');
+        postContent.textContent = postInput;
+        postContent.classList.add('post-content');
+        postElement.appendChild(postContent);
 
-    // Add buttons for reactions, comments, shares, and menu
-    const buttonsContainer = document.createElement('div');
-    buttonsContainer.classList.add('buttons-container');
+        // Add buttons for reactions, comments, shares, and menu
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.classList.add('buttons-container');
 
-    const reactionButton = document.createElement('button');
-    reactionButton.textContent = "React";
-    buttonsContainer.appendChild(reactionButton);
+        const reactionButton = document.createElement('button');
+        reactionButton.textContent = "React";
+        buttonsContainer.appendChild(reactionButton);
 
-    const commentButton = document.createElement('button');
-    commentButton.textContent = "Comment";
-    buttonsContainer.appendChild(commentButton);
+        const commentButton = document.createElement('button');
+        commentButton.textContent = "Comment";
+        buttonsContainer.appendChild(commentButton);
 
-    const shareButton = document.createElement('button');
-    shareButton.textContent = "Share";
-    buttonsContainer.appendChild(shareButton);
+        const shareButton = document.createElement('button');
+        shareButton.textContent = "Share";
+        buttonsContainer.appendChild(shareButton);
 
-    const menuButton = document.createElement('button');
-    menuButton.textContent = "•••";
-    buttonsContainer.appendChild(menuButton);
+        const menuButton = document.createElement('button');
+        menuButton.textContent = "•••";
+        buttonsContainer.appendChild(menuButton);
 
-    postElement.appendChild(buttonsContainer);
+        postElement.appendChild(buttonsContainer);
 
-    displayedPost.appendChild(postElement);
-  });
-});
+        displayedPost.appendChild(postElement);
+      });
+    });
   </script>
 </body>
 </html>

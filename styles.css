@@ -602,10 +602,18 @@ input{
 }
 /* CSS for Facebook-like posts */
 
-.post-item {
-  background-color: #9cb6c7;
+.post-container {
+  background-color: #f0f2f5;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.post-item {
+  background-color: #1f6bce;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
   padding: 16px;
   margin-bottom: 20px;
 }
@@ -633,4 +641,32 @@ input{
 
 .buttons-container button:hover {
   background-color: #f0f2f5;
+}
+/* Add this CSS to your styles.css file */
+
+.right {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.post {
+  margin-bottom: 20px; /* Add some bottom margin to create space between posts */
+}
+
+
+.posts-container {
+  height: 300px; /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.post-item {
+  padding: 10px;
+  margin-bottom: 10px;
 }
